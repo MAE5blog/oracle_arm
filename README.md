@@ -1,10 +1,10 @@
 
-# oracle_arm
+## oracle_arm
 oracle arm registration script. 乌龟壳刷ARM脚本
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=oracle_arm)
 
 
-# 本脚本优点
+## 本脚本优点
 
 简单,主机配置好oci config，然后下载main.tf即可，不用自己解析各种参数,自动设置ssh登陆密码。
 
@@ -16,16 +16,16 @@ oci请求几乎无延迟(为了保险起见加了5s的间隔，会自动判断�
 
 自动获取开机的**公网IP**，无需登陆后台即可ssh上🐔。
 
-### TODO
+#### TODO
 - [ ] 低配置升级
 - [ ] 无需下载公钥可刷
 - [ ] 无需配置tf可刷
 - [ ] 自动配置ipv6网络
 - [x] 自动设置机器ssh密码
 
-# 配置oci
+## 配置oci
 
-## 安装oci
+### 安装oci
 
 ```shell
 bash -c "$(curl –L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
@@ -34,11 +34,11 @@ bash -c "$(curl –L https://raw.githubusercontent.com/oracle/oci-cli/master/scr
 
 使用 `oci -v`命令可以查看是否安装成功
 
-## 配置oci
+### 配置oci
 
 参考文章[大鸟博客-Oracle甲骨文 ARM VPS（VM.Standard.A1.Flex）自动抢购脚本代码](https://www.daniao.org/14035.html)中的 步骤 **3、复制租户和用户的ocid** 和 步骤 **4、配置cli** 配置好oci和公钥 
 
-# 下载main.tf
+## 下载main.tf
 
 参考文章[大鸟博客-Oracle甲骨文 ARM VPS自动抢购脚本 – 利用宝塔面板+oci](https://www.daniao.org/14121.html) 中的 步骤 **1、生成main.tf** 即可，下载到本地并解压出main.tf文件
 
@@ -58,8 +58,8 @@ sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/s
 sudo service sshd restart
 ``` -->
 
-# 脚本需要改的地方
-## 启动 tg推送
+## 脚本需要改的地方
+### 启动 tg推送
 
 修改
 ```python
@@ -87,7 +87,7 @@ TG_USER_ID = ''  # 用户、群组或频道 ID，示例：129xxx206 ,
 ![推送](./images/s2.png)
 ![推送](./images/s3.png) -->
 
-# 运行脚本
+## 运行脚本
 
 ```
 git clone https://github.com/n0thing2speak/oracle_arm
@@ -112,7 +112,7 @@ pip3 install -r requirements.txt
 
 会自动停止的,不用管了。Done and enjoy 🎉
 
-# 再次感谢
+## 再次感谢
 
 感谢 [大鸟博客](https://www.daniao.org/) 最先放出刷ARM脚本,本脚本只是懒的解析参数并不想忍受oci terminal糟糕的响应速度不得已而写。
 
