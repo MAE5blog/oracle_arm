@@ -251,6 +251,10 @@ class InsCreate:
                         self.sleep_time -= 10
                 print("本次返回信息:",e)
                 time.sleep(self.sleep_time)
+            except oci.exceptions.RequestException as e:
+                re_text = "❌发生错误:{}".format(e)
+                print(re_text)
+                telegram(re_text)
             else:
                 #  开通成功 ，ins 就是返回的数据
                 #  可以等一会去请求实例的ip
@@ -271,7 +275,10 @@ class InsCreate:
                 break
             finally:
                 self.try_count += 1
-                print("抢注中，已经经过:{}尝试".format(self.try_count))
+                count_text = "抢注中，已经经过:{}尝试".format(self.try_count)
+                print(count_text)
+                if self.try_count % 100 == 0:
+                    telegram(count_text)
 
     def check_public_ip(self):
 
