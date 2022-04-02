@@ -1,7 +1,7 @@
 
-## oracle_arm
-oracle arm registration script. 乌龟壳刷ARM脚本
-![visitors](https://visitor-badge.glitch.me/badge?page_id=oracle_arm)
+## 修改
+1. 增加连接重置异常处理
+2. 增加每100次尝试推送一次telegram
 
 
 ## 本脚本优点
