@@ -240,10 +240,12 @@ class InsCreate:
 
                         # 可能是别的错误，也有可能是 达到上限了，要去查看一下是否开通成功，也有可能错误了
                         self.logp("❌如果看到这条推送,说明刷到机器，但是开通失败了，请后台检查你的cpu，内存，硬盘占用情况，并释放对应的资源 返回值:{},\n 脚本停止".format(e))
+                        telegram(self.desp)
+                        raise e
                     else:
-                        self.logp("❌发生错误,脚本停止!请检查参数或github反馈/查找 相关问题:{}".format(e))
-                    telegram(self.desp)
-                    raise e
+                        print("❌发生错误:{}".format(e))
+                        telegram("❌发生错误:{}".format(e))
+                    # raise e
                 else:
                     # 没有被限速，恢复减少的时间
                     print("目前没有请求限速,快马加刷中")
